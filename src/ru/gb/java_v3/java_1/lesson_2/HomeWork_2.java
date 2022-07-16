@@ -12,8 +12,46 @@ public class HomeWork_2 {
         System.out.println(Arrays.toString(fillArray2(new int[]{1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1})));
         System.out.println(findMinValue(new int[]{1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1}) + " - минимальное значение в массиве.");
         System.out.println(findMaxValue(new int[]{1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1}) + " - максимальное значение в массиве.");
+        fillDiagonal(11/*new int[9][9]*/);
+        System.out.println(checkBalance(new int[]{1, 5, 3, 2, /*11, 4, 5, 2, 4, 8,*/ 9, 1}));
+
     }
 
+
+
+
+    private static boolean checkBalance(int[] arr61) {
+        int sum = 0;
+        for (int i = 0; i < arr61.length; i++) {
+            sum += arr61[i];
+        }
+        int leftSum = 0;
+        if (sum % 2 == 0) {
+            for (int i = 0; i < arr61.length; i++) {
+                leftSum += arr61[i];
+                if (leftSum == sum / 2){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private static void fillDiagonal(int a/*int[][] arr51*/) {
+        String[][] arr51 = new String[a][a];
+        for (int i = 0; i < arr51.length; i++) {
+            for (int j = 0; j < arr51.length; j++) {
+                if (i == j | j == arr51.length - 1 - i | i == 0 | j == 0 | i == arr51.length - 1 | j == arr51.length - 1) {
+                    arr51[i][j] = "X";
+                } else {
+                    arr51[i][j] = " ";
+                }
+                System.out.print(arr51[i][j] + "  ");
+            }
+            System.out.println();
+        }
+
+    }
 
     private static void changeNumber(int[] arr) {
 //        int[] arr = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
