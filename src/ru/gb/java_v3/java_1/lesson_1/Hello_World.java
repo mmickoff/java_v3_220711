@@ -12,8 +12,8 @@ public class Hello_World {
         System.out.println(positiveOrNegativeNumber(4));
         System.out.println(positiveOrNegativeNumber(-4));
         System.out.println(positiveOrNegativeNumber(0));
-        greeting("Николай");
-        greeting("Михаил");
+        System.out.println(greeting("Николай"));
+        System.out.println(greeting("Михаил"));
         System.out.println(leapYear(2400));
         System.out.println(leapYear(2345));
         System.out.println(leapYear(2100));
@@ -27,18 +27,20 @@ public class Hello_World {
         return a + b + c;*/
     }
 
-    private static String leapYear(int year) {
+    private static boolean leapYear(int year) {
         int y4 = year % 4;
         int y100 = year % 100;
         int y400 = year % 400;
-        if (y4 == 0 && y100 != 0 || y400 == 0 ) {
+        /*if (y4 == 0 && y100 != 0 || y400 == 0 ) {
             return  String.format("Год " + year + " високосный");
         }
-            return String.format("Год " + year + " не високосный");
+            return String.format("Год " + year + " не високосный");*/
+        return y4 == 0 && y100 != 0 || y400 == 0;
     }
 
-    private static void greeting(String name) {
-        System.out.println("Привет, " + name + "!");
+    private static String greeting(String name) {
+        /*System.out.println("Привет, " + name + "!");*/
+        return "Привет, " + name + "!";
     }
 
 
@@ -48,18 +50,20 @@ public class Hello_World {
 
     private static boolean limitOfSumm(int x, int y) {
         int z = x + y;
-        if (z > 10 & z <= 20) {
+        /*if (z > 10 & z <= 20) {
             return true;
         } else {
             return false;
-        }
+        }*/
+        return z > 10 & z <= 20;
     }
 
-    private static String positiveOrNegativeNumber(int i) {
-        if(i >= 0){
+    private static boolean positiveOrNegativeNumber(int i)   {
+        /*if(i >= 0){
             return String.format("Число " + i + " положительное");
         }
-        return String.format("Число " + i + " отрицательное");
+        return String.format("Число " + i + " отрицательное");*/
+        return i >= 0;
     }
 
 
