@@ -14,7 +14,7 @@ public class HomeWork_2 {
         System.out.println(findMaxValue(new int[]{1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1}) + " - максимальное значение в массиве.");
         fillDiagonal(11/*new int[9][9]*/);
         System.out.println(checkBalance(new int[]{1, 5, 3, 2, /*11, 4, 5, 2, 4, 8,*/ 9, 2}));
-        arrayShift(new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8}, 3);
+        arrayShift(new int[]{2, 4, 6, 8, 10, 12, 14, 16, 18}, 3);
 
 
     }
@@ -24,12 +24,12 @@ public class HomeWork_2 {
         System.out.print("[ ");
         for (int i = 0; i < arr71.length; i++) {
             int i1 = i;
-            if (((i + offset) >= 0) & ((i1 + offset) <= arr71.length - 1)) {
-                i1 = i + offset;
-            } else if ((i + offset) > arr71.length - 1) {
-                i1 = i + offset - arr71.length;
-            } else if ((i + offset) < 0) {
-                i1 = i + offset + arr71.length;
+            if (((i - offset) >= 0) & ((i1 - offset) <= arr71.length - 1)) {
+                i1 = i - offset;
+            } else if ((i - offset) > arr71.length - 1) {
+                i1 = i - offset - arr71.length;
+            } else if ((i - offset) < 0) {
+                i1 = i - offset + arr71.length;
             }else{
                 return;
             }
