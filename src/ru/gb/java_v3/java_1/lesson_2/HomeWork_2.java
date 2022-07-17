@@ -13,12 +13,31 @@ public class HomeWork_2 {
         System.out.println(findMinValue(new int[]{1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1}) + " - минимальное значение в массиве.");
         System.out.println(findMaxValue(new int[]{1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1}) + " - максимальное значение в массиве.");
         fillDiagonal(11/*new int[9][9]*/);
-        System.out.println(checkBalance(new int[]{1, 5, 3, 2, /*11, 4, 5, 2, 4, 8,*/ 9, 1}));
+        System.out.println(checkBalance(new int[]{1, 5, 3, 2, /*11, 4, 5, 2, 4, 8,*/ 9, 2}));
+        arrayShift(new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8}, 3);
+
 
     }
 
-
-
+    private static void arrayShift(int[] arr71, int offset) {
+        offset %= arr71.length;
+        System.out.print("[ ");
+        for (int i = 0; i < arr71.length; i++) {
+            int i1 = i;
+            if (((i + offset) >= 0) & ((i1 + offset) <= arr71.length - 1)) {
+                i1 = i + offset;
+            } else if ((i + offset) > arr71.length - 1) {
+                i1 = i + offset - arr71.length;
+            } else if ((i + offset) < 0) {
+                i1 = i + offset + arr71.length;
+            }else{
+                return;
+            }
+            System.out.print(arr71[i1] + " ");
+        }
+        System.out.println("] ");
+//        System.out.println(Arrays.toString(arr71));
+    }
 
     private static boolean checkBalance(int[] arr61) {
         int sum = 0;
@@ -29,7 +48,7 @@ public class HomeWork_2 {
         if (sum % 2 == 0) {
             for (int i = 0; i < arr61.length; i++) {
                 leftSum += arr61[i];
-                if (leftSum == sum / 2){
+                if (leftSum == sum / 2) {
                     return true;
                 }
             }
