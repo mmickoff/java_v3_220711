@@ -14,7 +14,7 @@ public class HomeWork_2 {
         System.out.println(findMaxValue(new int[]{1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1}) + " - максимальное значение в массиве.");
         fillDiagonal(11/*new int[9][9]*/);
         System.out.println(checkBalance(new int[]{1, 5, 3, 2, /*11, 4, 5, 2, 4, 8,*/ 9, 2}));
-        arrayShift(new int[]{2, 4, 6, 8, 10, 12, 14, 16, 18}, 3);
+        arrayShift(new int[]{2, 4, 6, 8, 10, 12, 14, 16, 18}, 1);
 
 
     }
