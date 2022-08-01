@@ -98,7 +98,7 @@ public class TicTacToe {
         return true;
     }
 
-    private static boolean checkLine(char c) {
+    /*private static boolean checkLine(char c) {
         if (checkDiagLTtoRB() || checkDiagLBtoRT() || checkVertical() || chekHorizont) {
             return true;
         }
@@ -118,8 +118,8 @@ int
             return false;
         }
         return true;
-    }
-   /* private static boolean checkWin(char c) {
+    }*/
+    private static boolean checkWin(char c) {
 
         // hor
         if (field[0][0] == c && field[0][1] == c && field[0][2] == c) return true;
@@ -135,7 +135,7 @@ int
         if (field[0][0] == c && field[1][1] == c && field[2][2] == c) return true;
         if (field[0][2] == c && field[1][1] == c && field[2][0] == c) return true;
         return false;
-    }*/
+    }
 
     public static void main(String[] args) {
         // start a game!
@@ -171,5 +171,6 @@ int
             return true;
         }
         return false;
+
     }
 }
